@@ -319,7 +319,7 @@ def run_attack_and_notify(message, user_id, target, port, time):
     success, response = start_attack(user_id, target, port, time)
     if success:
         bot.reply_to(message, "Attack finished " + response)
-        bot.reply_to(message, "https://envs.sh/94V.jpg")
+        bot.reply_to(message, "<blockquote><b>❖ <a</a> ғɪɴɪsʜᴇᴅ ⏤͟͟͞͞★</b></blockquote>")
 
 # Handler for /ny command
 @bot.message_handler(commands=['ny'])
@@ -355,7 +355,7 @@ def handle_ny(message):
                     f"𝐓𝐚𝐫𝐠𝐞𝐭: {target}\n"
                     f"𝐏𝐨𝐫𝐭: {port}\n"
                     f"𝐓𝐢𝐦𝐞: {time} 𝐒𝐞𝐜𝐨𝐧𝐝𝐬\n"
-                    f"❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ <a href=https://t.me/Tmzeroo>Owner</a></b></blockquote>"
+                    "<blockquote><b>❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ <a href=https://t.me/Tmzeroo>Owner</a></b></blockquote>"
                 )
                 bot.reply_to(message, attack_start_message)  # Send the attack initiation message
                 
