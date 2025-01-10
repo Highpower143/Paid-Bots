@@ -9,7 +9,7 @@ COPY . .
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
-    && pip install --no-cache-dir telebot flask aiogram pyTelegramBotAPI
+    && pip install --no-cache-dir telegram telebot flask aiogram pyTelegramBotAPI
 
 # Make all files executable
 RUN chmod +x *
