@@ -8,7 +8,7 @@
       "description": "Your Telegram bot token from BotFather",
       "required": true
     },
-    "ADMIN_ID": {
+    "ADMIN_IDS": {
       "description": "The admin ID who will manage the bot",
       "required": true
     }
