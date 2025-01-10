@@ -1,0 +1,16 @@
+{
+  "name": "Telegram Bot Deployment",
+  "description": "A Telegram bot deployment on Heroku using Python",
+  "repository": "https://github.com/Highpower143/BTBU",
+  "stack": "container",
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Your Telegram bot token from BotFather",
+      "required": true
+    },
+    "ADMIN_ID": {
+      "description": "The admin ID who will manage the bot",
+      "required": true
+    }
+  }
+}
