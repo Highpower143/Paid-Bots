@@ -342,8 +342,8 @@ def handle_ny(message):
             target = command[1]
             port = int(command[2])  # Convert port to integer
             time = int(command[3])  # Convert time to integer
-            if time > 240:
-                response = "Error: Time interval must be less than 240."
+            if time > 150:
+                response = "Error: Time interval must be less than 150."
             else:
                 record_command_logs(user_id, '/ny', target, port, time)
                 log_command(user_id, target, port, time)
