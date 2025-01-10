@@ -19,7 +19,7 @@ db = client['Nand']
 users_collection = db['users']
 redeem_codes_collection = db['redeem_codes']
 
-TELEGRAM_BOT_TOKEN = '7814117527:AAHAMOkd8JmLmqIxjHJwkUHi2sCF3UhXcbA'
+TELEGRAM_BOT_TOKEN = '7591950692:AAF3mjkZ_RYjNj761AwIhsNrwdHxr43wa_k'
 ADMIN_USER_ID =7858950584
 
 cooldown_dict = {}
