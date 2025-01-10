@@ -1,0 +1,53 @@
+name: Python Lint and Auto-fix
+
+on:
+  push:
+    paths:
+      - "**/*.py"  # Trigger workflow on any .py file changes
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout code from repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Setup Python environment
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10.x"
+
+      # Step 3: Install required libraries for linting
+      - name: Install linting libraries
+        run: pip install autopep8 autoflake isort black
+
+      # Step 4: Apply autopep8 for PEP8 formatting
+      - name: Format code with autopep8
+        run: autopep8 --verbose --in-place --recursive --aggressive .
+
+      # Step 5: Remove unused imports and variables
+      - name: Remove unused imports with autoflake
+        run: autoflake --in-place --recursive --remove-all-unused-imports --ignore-init-module-imports .
+
+      # Step 6: Sort imports using isort
+      - name: Sort imports with isort
+        run: isort .
+
+      # Step 7: Format code with black
+      - name: Format code with black
+        run: black .
+
+      # Step 8: Commit changes back to the repository
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Auto Lint Fixes"
+          commit_options: "--no-verify"
+          repository: .
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "41898282+github-actions[bot]@users.noreply.github.com"
+          commit_author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
