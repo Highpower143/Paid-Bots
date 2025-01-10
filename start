@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Check if .env file exists
+if [ ! -f .env ]; then
+  echo "Error: .env file not found. Please run setup.sh first."
+  exit 1
+fi
+
+# Export environment variables
+export $(cat .env | xargs)
+
+# Start the bot
+echo "Starting the bot..."
+python3 nand.py
