@@ -275,7 +275,7 @@ def send_periodic_message():
     while True:
         for user_id in allowed_user_ids:
             try:
-                bot.send_message(user_id, '''BoT iS aLive BaBu ❤️''')
+                bot.send_message(user_id, '''BoT iS aLive BaBu ❤️\n\n❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥@M4_Music_Bot ⏤͟͟͞͞★🕊️''')
             except Exception as e:
                 print(f"Failed to send message to {user_id}: {e}")
         time.sleep(300)  # Wait 5 minutes before sending the message again
@@ -319,7 +319,7 @@ def run_attack_and_notify(message, user_id, target, port, time):
     success, response = start_attack(user_id, target, port, time)
     if success:
         bot.reply_to(message, "Attack finished " + response)
-        bot.reply_to(message, "<blockquote><b>❖ <a</a> ғɪɴɪsʜᴇᴅ ⏤͟͟͞͞★</b></blockquote>")
+        bot.reply_to(message, " ғɪɴɪsʜᴇᴅ ⏤͟͟͞͞★")
 
 # Handler for /ny command
 @bot.message_handler(commands=['ny'])
@@ -355,7 +355,7 @@ def handle_ny(message):
                     f"𝐓𝐚𝐫𝐠𝐞𝐭: {target}\n"
                     f"𝐏𝐨𝐫𝐭: {port}\n"
                     f"𝐓𝐢𝐦𝐞: {time} 𝐒𝐞𝐜𝐨𝐧𝐝𝐬\n"
-                    "<blockquote><b>❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ <a href=https://t.me/Tmzeroo>Owner</a></b></blockquote>"
+                    f"❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ @TMZEROO🕊️"
                 )
                 bot.reply_to(message, attack_start_message)  # Send the attack initiation message
                 
